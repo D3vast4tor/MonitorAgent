@@ -3,11 +3,13 @@
 ### A monitoring agent for containers running in your machine.
 ### This software was build using InfluxDB, Grafana and a modified version of [Cestnut](https://github.com/Cestnut/DockerResourcesDisplayer-Container)'s script
 In the *dashboard* folder there's a json file to import a basic Grafana dashboard with rows, visualizations and query's code.
-Before starting the script make sure you have docker installed on your system.
+
 ### Configuration
 To make sure that the MonitorAgent can send data about resource usage to InfluxDB you have to configure it first.
 
 Delete and edit the lines:`YOUR_TOKEN`,`YOUR_ORG`,`YOUR_BUCKET` and eventually the default username and password that are both `admin`.
+
+Also edit the arguments in the docker file accordingly to the precedent step, if you want to know all the arguments avaiable for the python file simply run `python3 influxdbAgent.py --help` in a virtual enviroment such as Conda, venv or similar.
 
 Simply run `docker compose up` to start building the images and containers required.
 
