@@ -18,7 +18,7 @@ Also edit the arguments in the docker file accordingly to the precedent step, if
 
 Simply run `docker compose up` to start building the images and containers required.
 
-After that you should see a log for the 3 main containers: **StorageAgent**,**DisplayerAgent** and **MonitorAgent**.
+After that you should see a log for the 3 main containers: **StorageAgent**, **DisplayerAgent** and **MonitorAgent**.
 
 Additionally you have to set up a datasource for Grafana, simply access the webpage at the url `localhost:3000`, follow the guided steps to modify default password if you want, then click on **Add your first data source**
 
