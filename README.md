@@ -11,6 +11,7 @@ Simply run `docker compose up` to start building the images and containers requi
 After that you should see a log for the 3 main containers: *StorageAgent*,*DisplayerAgent* and *MonitorAgent*.
 Additionally you have to set up a datasource for Grafana, simply access the webpage at the url `localhost:3000`, follow the guided steps to modify default password if you want, then click on 
 > Add your first data source
+> 
 Select InfluxDB and set everything according to how you have choose in the previous steps.
 Pay attention to the url that need to be set to `influxdb:8086`.
 After that you can create a dashboard or import a json file like the one under the *dashboard* folder.
