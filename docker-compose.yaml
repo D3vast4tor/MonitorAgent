@@ -1,0 +1,32 @@
+version: '1.0'
+services:
+  grafana:
+    image: grafana/grafana-oss
+    container_name: DisplayerAgent
+    restart: unless-stopped
+    depends_on:
+      - influxdb
+    ports:
+      - '3000:3000'
+    volumes:
+      - 'grafana_storage:/var/lib/grafana'
+      - './grafana.ini:/etc/grafana/grafana.ini'
+  influxdb:
+    image: influxdb:latest
+    container_name: StorageAgent
+    restart: unless-stopped
+    volumes:
+    - influxDb:/var/lib/influxdb2
+    ports:
+      - '8086:8086'
+  monitor_agent:
+    container_name: MonitorAgent
+    restart: unless-stopped
+    depends_on:
+      - influxdb
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+volumes:
+  grafana_storage: {}
+  influxDb: {}
